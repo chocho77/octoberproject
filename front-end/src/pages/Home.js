@@ -5,8 +5,12 @@ export default function Home() {
     const [users, setUser] = useState([]);
 
     useEffect(()=> {
-        console.log("Code With Chavdar.");
-    })
+        
+    });
+
+    const loadEmployees=()=>{
+        const result = axios.get("http://localhost:8090/employees");
+    }
   return (
     <div className='container'>
         <div className='py-4'>
