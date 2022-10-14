@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 export default function AddEmployee() {
+  const [employee, setEmployee]=useState({
+    firstname:"",
+    lastname:"",
+    email:""
+
+  });
+  
   return (
     <div className="container">
       <div className="row">
