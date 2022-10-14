@@ -7,7 +7,7 @@ export default function AddEmployee() {
     email:""
 
   });
-  
+  const{firstname,lastname,email}=employee;
   return (
     <div className="container">
       <div className="row">
@@ -21,7 +21,9 @@ export default function AddEmployee() {
               type={"text"}
               className="form-control"
               placeholder="Enter you first name"
-              name="firstName"/>
+              name="firstName"
+              value={firstname}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="LastName" className="form-label">
@@ -31,7 +33,9 @@ export default function AddEmployee() {
               type={"text"}
               className="form-control"
               placeholder="Enter you last name"
-              name="lastName"/>
+              name="lastName"
+              value={lastname}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="Email" className="form-label">
@@ -41,7 +45,9 @@ export default function AddEmployee() {
               type={"text"}
               className="form-control"
               placeholder="Enter your e-mail address"
-              name="email"/>
+              name="email"
+              value={email}
+              />
             </div>
             <button type="submit" className="btn btn-outline-primary">
               Submit
