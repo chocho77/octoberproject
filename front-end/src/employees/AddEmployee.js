@@ -7,7 +7,13 @@ export default function AddEmployee() {
     email:""
 
   });
+  
   const{firstname,lastname,email}=employee;
+
+  const onInputChange=(e)=>{
+    setEmployee({[e.target.name]:e.target.value})
+
+  }
   return (
     <div className="container">
       <div className="row">
@@ -23,6 +29,7 @@ export default function AddEmployee() {
               placeholder="Enter you first name"
               name="firstName"
               value={firstname}
+              onChange={(e)=>onInputChange(e)}
               />
             </div>
             <div className="mb-3">
@@ -35,6 +42,7 @@ export default function AddEmployee() {
               placeholder="Enter you last name"
               name="lastName"
               value={lastname}
+              onChange={(e)=>onInputChange(e)}
               />
             </div>
             <div className="mb-3">
@@ -47,6 +55,7 @@ export default function AddEmployee() {
               placeholder="Enter your e-mail address"
               name="email"
               value={email}
+              onChange={(e)=>onInputChange(e)}
               />
             </div>
             <button type="submit" className="btn btn-outline-primary">
