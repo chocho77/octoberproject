@@ -11,7 +11,7 @@ export default function AddEmployee() {
   const{firstname,lastname,email}=employee;
 
   const onInputChange=(e)=>{
-    setEmployee({...employee,[e.target.firstname]:e.target.value})
+    setEmployee({...employee,[e.target.name]:e.target.value})
 
   }
   return (
