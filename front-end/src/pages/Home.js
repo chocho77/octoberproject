@@ -5,8 +5,9 @@ export default function Home() {
     const [users, setUser] = useState([]);
 
     useEffect(()=> {
+        loadEmployees();
         
-    });
+    }, []);
 
     const loadEmployees=async()=>{
         const result = await axios.get("http://localhost:8090/employees");
