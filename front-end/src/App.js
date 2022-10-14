@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './layout/Navbar';
 import Home from './pages/Home';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AddEmployee from './employees/AddEmployee';
 function App() {
   return (
     <div className="App">
@@ -10,8 +11,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/addEmployee" element={<AddEmployee/>} />
         </Routes>
-        <Home />
+  
       </Router>
     
     </div>
