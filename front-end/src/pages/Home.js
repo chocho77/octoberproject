@@ -11,7 +11,7 @@ export default function Home() {
 
     const loadEmployees=async()=>{
         const result = await axios.get("http://localhost:8090/employees");
-        console.log(result.data);
+        setEmployee(result.data);
     }
   return (
     <div className='container'>
@@ -30,9 +30,9 @@ export default function Home() {
         employee.map((employee,index)=>(
             <tr>
                 <th scope="row" key={index}>{index+1}</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{employee.firstName}</td>
+                <td>{employee.LastName}</td>
+                <td>{employee.email}</td>
             </tr>
 
         ))
