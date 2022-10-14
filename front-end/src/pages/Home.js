@@ -19,10 +19,10 @@ export default function Home() {
         <table className="table border shadow">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Employee</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Email</th>
     </tr>
   </thead>
   <tbody>
@@ -31,7 +31,7 @@ export default function Home() {
             <tr>
                 <th scope="row" key={index}>{index+1}</th>
                 <td>{employee.firstName}</td>
-                <td>{employee.LastName}</td>
+                <td>{employee.lastName}</td>
                 <td>{employee.email}</td>
             </tr>
 
