@@ -8,8 +8,8 @@ export default function Home() {
         
     });
 
-    const loadEmployees=()=>{
-        const result = axios.get("http://localhost:8090/employees");
+    const loadEmployees=async()=>{
+        const result = await axios.get("http://localhost:8090/employees");
     }
   return (
     <div className='container'>
