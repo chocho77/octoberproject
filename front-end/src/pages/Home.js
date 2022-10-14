@@ -29,7 +29,7 @@ export default function Home() {
     {
         employee.map((employee,index)=>(
             <tr>
-                <th scope="row">1</th>
+                <th scope="row" key={index}>{index+1}</th>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
