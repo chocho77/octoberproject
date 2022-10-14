@@ -10,6 +10,7 @@ export default function Home() {
 
     const loadEmployees=async()=>{
         const result = await axios.get("http://localhost:8090/employees");
+        console.log(result);
     }
   return (
     <div className='container'>
