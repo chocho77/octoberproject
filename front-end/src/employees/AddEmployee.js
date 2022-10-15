@@ -16,13 +16,14 @@ export default function AddEmployee() {
   }
 
   const onSubmit=(e)=>{
-    
+
   }
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow" >
             <h2 className="text-center m-4">Register Employee</h2>
+            <form onSubmit={(e)=>onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="FirstName" className="form-label">
                 First Name
@@ -68,6 +69,7 @@ export default function AddEmployee() {
             <button type="submit" className="btn btn-outline-danger mx-2">
               Cancel
             </button>
+            </form>
           </div>  
       </div>
 
