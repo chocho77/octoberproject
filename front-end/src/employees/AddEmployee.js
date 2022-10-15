@@ -14,6 +14,10 @@ export default function AddEmployee() {
     setEmployee({...employee,[e.target.name]:e.target.value})
 
   }
+
+  const onSubmit=(e)=>{
+    
+  }
   return (
     <div className="container">
       <div className="row">
