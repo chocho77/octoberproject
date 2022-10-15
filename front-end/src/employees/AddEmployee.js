@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function AddEmployee() {
 
   let navigate = useNavigate();
-  
+
   const [employee, setEmployee]=useState({
     firstname:"",
     lastname:"",
@@ -74,9 +74,9 @@ export default function AddEmployee() {
             <button type="submit" className="btn btn-outline-primary">
               Submit
             </button>
-            <button type="submit" className="btn btn-outline-danger mx-2">
+            <Link className="btn btn-outline-danger mx-2" to="/">
               Cancel
-            </button>
+            </Link>
             </form>
           </div>  
       </div>
