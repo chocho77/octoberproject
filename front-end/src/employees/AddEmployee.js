@@ -6,7 +6,7 @@ export default function AddEmployee() {
     lastname:"",
     email:""
 
-  });
+  })
   
   const{firstname,lastname,email}=employee;
 
@@ -27,7 +27,7 @@ export default function AddEmployee() {
               type={"text"}
               className="form-control"
               placeholder="Enter you first name"
-              name="firstName"
+              name="firstname"
               value={firstname}
               onChange={(e)=>onInputChange(e)}
               />
@@ -40,7 +40,7 @@ export default function AddEmployee() {
               type={"text"}
               className="form-control"
               placeholder="Enter you last name"
-              name="lastName"
+              name="lastname"
               value={lastname}
               onChange={(e)=>onInputChange(e)}
               />
