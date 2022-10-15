@@ -1,6 +1,11 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddEmployee() {
+
+  let navigate = useNavigate();
+  
   const [employee, setEmployee]=useState({
     firstname:"",
     lastname:"",
@@ -15,9 +20,12 @@ export default function AddEmployee() {
 
   }
 
-  const onSubmit=(e)=>{
+  const onSubmit=async (e)=>{
+    e.preventDefault();
+    await axios.post("http://localhost:8080/employee",employee);
+    navigate("/");
 
-  }
+  };
   return (
     <div className="container">
       <div className="row">
