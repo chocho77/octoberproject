@@ -35,13 +35,13 @@ public class EmployeeController {
     }
     
     @GetMapping("/employee/{id}")
-    Employee getEmployeeById(@PathVariable Long id) {
+    Employee getEmployeeById(@PathVariable int id) {
         return employeeRepository.findById(id)
                 .orElseThrow(()-> new EmployeeNotFoundException(id));
     }
     
     @PutMapping("/employee/{id}")
-    Employee updateEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+    Employee updateEmployee(@RequestBody Employee newEmployee, @PathVariable int id) {
         return employeeRepository.findById(id)
                 .map(employee -> {
                     employee.setFirstName(newEmployee.getFirstName());
@@ -53,7 +53,7 @@ public class EmployeeController {
     }
     
     @DeleteMapping("/employee/{id}")
-    String deleteEmployee(@PathVariable Long id) {
+    String deleteEmployee(@PathVariable Integer id) {
         if(!employeeRepository.existsById(id)) {
             throw new EmployeeNotFoundException(id);
         }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Link, useParams} from "react-router-dom";
+import { Link, Navigate, useParams} from "react-router-dom";
 
 export default function Home() {
     const [employee, setEmployee] = useState([]);
@@ -19,7 +19,7 @@ export default function Home() {
 
     const deleteEmployee=async (id)=>{
       await axios.delete(`http://localhost:8080/employee/${id}`);
-      loadEmployees();
+      Navigate("/");
     }
   return (
     <div className='container'>
