@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddEmployee from './employees/AddEmployee';
 import EditEmployee from './employees/EditEmployee';
-
+import ViewEmployee from "./employees/ViewEmployee";
 function App() {
   return (
     <div className="App">
@@ -15,6 +15,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/addEmployee" element={<AddEmployee/>} />
           <Route exact path="/editemployee/:id" element={<EditEmployee/>} />
+          <Route exact path="/viewemployee/:id" element={<ViewEmployee/>} />
         </Routes>
   
       </Router>
