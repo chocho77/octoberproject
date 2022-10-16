@@ -28,6 +28,7 @@ export default function Home() {
   <thead>
     <tr>
       <th scope="col">Employee</th>
+      <th scope="col">Id</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
@@ -39,6 +40,7 @@ export default function Home() {
         employee.map((employee,index)=>(
             <tr>
                 <th scope="row" key={index}>{index+1}</th>
+                <td>{employee.id}</td>
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
                 <td>{employee.email}</td>
