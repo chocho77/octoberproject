@@ -19,7 +19,6 @@ export default function Home() {
 
     const deleteEmployee=async (id)=>{
       await axios.delete(`http://localhost:8080/employee/${id}`);
-      loadEmployees();
 
     }
   return (
@@ -52,9 +51,10 @@ export default function Home() {
                     to={`/editemployee/${employee.id}`}
                     
                     >Edit</Link>
-                    <button className="btn btn-danger mx-2"
+                    <Link className="btn btn-danger mx-2"
                     onClick={()=> deleteEmployee(employee.id)}
-                    >Delete</button>
+                    to="/"
+                    >Delete</Link>
 
                 </td>
             </tr>
