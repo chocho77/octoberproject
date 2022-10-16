@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export default function ViewEmployee() {
@@ -30,16 +30,19 @@ export default function ViewEmployee() {
 
                       <div className="card">
                         <div className="card-header">
-                            Details of employee id :
+                            Details of employee id :{employee.id}
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">
                                     <b>First Name:</b>
+                                    {employee.firstname}
                                 </li>
                                 <li className="list-group-item">
                                     <b>Last Name:</b>
+                                    {employee.lastname}
                                 </li>
                                 <li className="list-group-item">
                                     <b>Email:</b>
+                                    {employee.email}
                                 </li>
                             </ul>
                         </div>
