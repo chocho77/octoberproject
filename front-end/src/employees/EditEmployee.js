@@ -26,6 +26,11 @@ export default function EditEmployee() {
     navigate("/");
 
   };
+
+  const loadEmployee = async ()=> {
+    const result = await axios.get(`http://localhost:8080/employee/${id}`);
+    setEmployee(result.data);
+  }
   return (
     <div className="container">
       <div className="row">
