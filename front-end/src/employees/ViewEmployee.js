@@ -1,7 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 export default function ViewEmployee() {
+
+    const [employee, setEmployee]=useState({
+        firstname:"",
+        lastname:"",
+        email:""
+
+    });
+
+    const {id} = useParams();
+
+    useEffect(()=>{
+        loadEmployee();
+    },[]);
+
+    const loadEmployee=async ()=>{
+        const result = await axios.get(`http://localhost:8080/employee/${id}`);
+        setEmployee(result.data);
+    }
 
     return (
         <div className="container">
