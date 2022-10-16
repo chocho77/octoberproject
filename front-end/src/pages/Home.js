@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Link, Navigate, useParams} from "react-router-dom";
+import { Link, useParams, useNavigate} from "react-router-dom";
 
 export default function Home() {
     const [employee, setEmployee] = useState([]);
+
+
+    let navigate = useNavigate();
 
     const {id} = useParams();
 
@@ -19,7 +22,7 @@ export default function Home() {
 
     const deleteEmployee=async (id)=>{
       await axios.delete(`http://localhost:8080/employee/${id}`);
-      Navigate("/");
+      navigate("/");
     }
   return (
     <div className='container'>
