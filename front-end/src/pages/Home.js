@@ -50,7 +50,7 @@ export default function Home() {
                     
                     >Edit</Link>
                     <button className="btn btn-danger mx-2"
-                    onClick={()=> deleteEmploye(employee.id)}
+                    onClick={()=> deleteEmployee(employee.id)}
                     >Delete</button>
 
                 </td>
