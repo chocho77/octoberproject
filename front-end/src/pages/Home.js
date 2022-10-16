@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Home() {
     const [employee, setEmployee] = useState([]);
+
+    const {id} = useParams();
 
     useEffect(()=> {
         loadEmployees();
@@ -13,6 +15,11 @@ export default function Home() {
     const loadEmployees=async()=>{
         const result = await axios.get("http://localhost:8090/employees");
         setEmployee(result.data);
+    }
+
+    const deleteEmployee=async (id)=>{
+      await axios.delete(`http://localhost:8080/employee/${id}`);
+
     }
   return (
     <div className='container'>
@@ -42,7 +49,9 @@ export default function Home() {
                     to={`/editemployee/${employee.id}`}
                     
                     >Edit</Link>
-                    <button className="btn btn-danger mx-2">Delete</button>
+                    <button className="btn btn-danger mx-2"
+                    onClick={()=> deleteEmploye(employee.id)}
+                    >Delete</button>
 
                 </td>
             </tr>
