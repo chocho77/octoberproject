@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ViewEmployee() {
 
@@ -13,17 +14,20 @@ export default function ViewEmployee() {
                             Details of employee id :
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">
-                                    <b>Name:</b>
+                                    <b>First Name:</b>
                                 </li>
                                 <li className="list-group-item">
-                                    <b>Name:</b>
+                                    <b>Last Name:</b>
                                 </li>
                                 <li className="list-group-item">
-                                    <b>Name:</b>
+                                    <b>Email:</b>
                                 </li>
                             </ul>
                         </div>
                       </div>
+                      <Link className="btn btn-primary my-2" to={"/"}>
+                           Back to Home
+                      </Link>  
                 </div>
             </div>
         </div>
