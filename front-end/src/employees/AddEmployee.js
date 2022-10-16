@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -21,8 +20,23 @@ export default function AddEmployee() {
   }
 
   const onSubmit=async (e)=>{
-    e.preventDefault();
-    await axios.post("http://localhost:8080/employee",employee);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "firstName": firstname,
+      "lastName": lastname,
+      "email": email
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("http://localhost:8080/employee/", requestOptions);
     navigate("/");
 
   };
