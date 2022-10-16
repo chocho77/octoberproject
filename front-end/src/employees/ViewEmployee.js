@@ -12,7 +12,15 @@ export default function ViewEmployee() {
                         <div className="card-header">
                             Details of employee id :
                             <ul className="list-group list-group-flush">
-                                
+                                <li className="list-group-item">
+                                    <b>Name:</b>
+                                </li>
+                                <li className="list-group-item">
+                                    <b>Name:</b>
+                                </li>
+                                <li className="list-group-item">
+                                    <b>Name:</b>
+                                </li>
                             </ul>
                         </div>
                       </div>
