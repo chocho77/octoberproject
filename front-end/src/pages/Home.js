@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Link, useParams, useNavigate} from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 
 export default function Home() {
     const [employee, setEmployee] = useState([]);
 
-
-    let navigate = useNavigate();
 
     const {id} = useParams();
 
@@ -16,8 +14,14 @@ export default function Home() {
     }, []);
 
     const loadEmployees=async()=>{
-        const result = await axios.get("http://localhost:8080/employees");
-        setEmployee(result.data);
+      let requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      fetch("http://localhost:8080/employees", requestOptions)
+      .then(result => setEmployee(result.data));
+        
     }
 
     const deleteEmployee=async (id)=>{
