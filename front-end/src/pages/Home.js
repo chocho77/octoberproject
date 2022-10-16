@@ -19,6 +19,7 @@ export default function Home() {
 
     const deleteEmployee=async (id)=>{
       await axios.delete(`http://localhost:8080/employee/${id}`);
+      loadEmployees();
 
     }
   return (
